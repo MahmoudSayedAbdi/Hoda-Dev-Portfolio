@@ -249,21 +249,24 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
   const { toggleSidebar } = useSidebar();
 
   return (
-    <Button
-      data-sidebar="trigger"
-      data-slot="sidebar-trigger"
-      variant="ghost"
-      size="icon"
-      className={cn("size-7 bg-gradient ", className)}
-      onClick={(event) => {
-        onClick?.(event);
-        toggleSidebar();
-      }}
-      {...props}
-    >
-      <Menu />
-      <span className="sr-only">Toggle Sidebar</span>
-    </Button>
+    <div className="flex justify-between sticky border-b">
+      <h1 className="block md:hidden font-extrabold text-4xl px-2 py-1">HD</h1>
+      <Button
+        data-sidebar="trigger"
+        data-slot="sidebar-trigger"
+        variant="ghost"
+        size="icon"
+        className={cn("size-7 bg-gradient", className)}
+        onClick={(event) => {
+          onClick?.(event);
+          toggleSidebar();
+        }}
+        {...props}
+      >
+        <Menu />
+        <span className="sr-only">Toggle Sidebar</span>
+      </Button>
+    </div>
   );
 }
 

@@ -12,10 +12,8 @@ export default function Providers({ children }: ProvidersProps) {
       <SidebarProvider>
         <div className="flex min-h-screen w-full">
           <AppSidebar />
-          <main className="flex-1 w-full overflow-x-hidden">
-            <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
-              <SidebarTrigger className="m-4" />
-            </div>
+          <main className="flex-1 w-full">
+            <SidebarTrigger className="m-4" />
             <div className="w-full">{children}</div>
           </main>
         </div>
