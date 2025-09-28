@@ -8,8 +8,8 @@ import Experience from "./Experience";
 
 export default function About() {
   return (
-    <div id="about" className="h-screen flex flex-col">
-      <div className="px-10 grid gap-10 grid-cols-1 md:grid-cols-3 justify-between py-10">
+    <div id="about" className="flex flex-col">
+      <div className="p-10 grid gap-10 grid-cols-1 md:grid-cols-3 justify-between">
         {/* left side */}
         <div className="md:col-span-1 flex flex-col md:h-screen items-center justify-center">
           <div className="flex flex-col gap-6 justify-center items-start relative z-10">

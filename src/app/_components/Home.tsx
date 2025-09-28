@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="h-screen md:h-screen  grid  grid-cols-1 md:grid-cols-2 justify-between "
+      className="h-screen md:h-screen  grid  grid-cols-1 md:grid-cols-2 justify-between px-5"
     >
       {/* LEFT SECTION - Introduction Text */}
       <div className="flex flex-col  md:h-screen items-center justify-center">
