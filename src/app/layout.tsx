@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/providers";
 
 const iBMPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
 });
 const iBMPlexSansArabic = IBM_Plex_Sans_Arabic({
   subsets: ["arabic"],
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="scroll-smooth" lang="en" suppressHydrationWarning>
       <head />
       <body className={`${iBMPlexSans.className} ${iBMPlexSansArabic.className} antialiased`}>
         <Providers>{children}</Providers>
