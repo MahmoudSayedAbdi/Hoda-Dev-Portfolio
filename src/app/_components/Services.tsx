@@ -56,12 +56,14 @@ export default function Services() {
         {/* content */}
         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-10">
           {skills.map((skill) => (
-            <div
-              key={skill.title}
-              className="bg-white rounded-lg flex flex-col justify-center items-center gap-3 p-5"
-            >
-              <Image src={skill.icon} alt={skill.title} className="w-20 " />
-              <p className="text-black">{skill.title}</p>
+            <div key={skill.title} className="relative bg-white rounded-lg group overflow-hidden">
+              <div className="w-full h-full  flex flex-col justify-center items-center gap-3 p-5 relative  z-20">
+                <Image src={skill.icon} alt={skill.title} className="w-20 " />
+                <p className="text-black group-hover:text-white transition-all duration-200">
+                  {skill.title}
+                </p>
+              </div>
+              <span className="absolute rounded-lg w-full h-full top-full bg-gradient opacity-80 z-10 group-hover:top-0 transition-all duration-200"></span>
             </div>
           ))}
         </div>

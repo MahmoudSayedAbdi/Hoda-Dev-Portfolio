@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { MoveUpRight } from "lucide-react";
 import landingImage from "../../../public/assests/landingImage.webp";
 import Image from "next/image";
+import CustomButtom from "@/components/common/NavigetButtom";
 
 /**
  * Home Component - Main landing section of the portfolio
@@ -32,12 +31,10 @@ export default function Home() {
           </p>
 
           {/* Call-to-action button */}
-          <Button
-            variant={"outline"}
-            className="text-xl bg-black dark:bg-white text-white dark:text-black py-5 px-10 mt-3 rounded-none flex gap-2"
-          >
-            Let&apos;s talk with me <MoveUpRight className="bg-gradient" />
-          </Button>
+          <CustomButtom href="https://api.whatsapp.com/send/?phone=%2B201113404148&text&type=phone_number&app_absent=0">
+            {" "}
+            Let&apos;s talk with me
+          </CustomButtom>
         </div>
       </div>
 

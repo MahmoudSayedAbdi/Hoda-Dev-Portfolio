@@ -32,12 +32,8 @@ const items = [
     url: "#services",
   },
   {
-    title: "Works",
-    url: "#works",
-  },
-  {
-    title: "Blogs",
-    url: "#blogs",
+    title: "Projects",
+    url: "#projects",
   },
   {
     title: "Contact",
@@ -47,7 +43,7 @@ const items = [
 
 const SocialNav = [
   {
-    href: "https://www.facebook.com/",
+    href: "https://github.com/MahmoudSayedAbdi",
     image: github,
   },
   {

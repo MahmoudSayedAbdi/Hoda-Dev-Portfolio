@@ -13,8 +13,8 @@ export default function Providers({ children }: ProvidersProps) {
         <div className="flex min-h-screen w-full">
           <AppSidebar />
           <main className="flex-1 w-full">
-            <SidebarTrigger className="m-4" />
-            <div className="w-full">{children}</div>
+            <SidebarTrigger className="m-1" />
+            <div className="w-full mt-16  md:mt-0">{children}</div>
           </main>
         </div>
       </SidebarProvider>

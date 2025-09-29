@@ -249,7 +249,7 @@ function SidebarTrigger({ className, onClick, ...props }: React.ComponentProps<t
   const { toggleSidebar } = useSidebar();
 
   return (
-    <div className="flex justify-between sticky border-b">
+    <div className="flex justify-between items-center z-50 fixed  md:sticky w-full bg-gradient backdrop-blur-md border-b">
       <h1 className="block md:hidden font-extrabold text-4xl px-2 py-1">HD</h1>
       <Button
         data-sidebar="trigger"

@@ -1,10 +1,10 @@
 import React from "react";
 import myImage from "../../../public/assests/myImage.svg";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ContactRound, Mail, MapPin, MoveUpRight, Phone } from "lucide-react";
+import { ContactRound, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import Experience from "./Experience";
+import CustomButtom from "@/components/common/NavigetButtom";
 
 export default function About() {
   return (
@@ -25,19 +25,9 @@ export default function About() {
               <p className="text-xl lg:text-2xl">
                 <strong className="font-bold">front end developer</strong> based in Egypt
               </p>
-              <Link
-                href={
-                  "https://docs.google.com/document/d/1DTUXwF6JRvYw9OGvR5uABG13e2bv1hGw/edit?usp=drive_link&ouid=106354110286437861818&rtpof=true&sd=true"
-                }
-                target="_blank"
-              >
-                <Button
-                  variant={"outline"}
-                  className="text-xl bg-black dark:bg-white text-white dark:text-black py-5 px-10 mt-3 rounded-none flex gap-2"
-                >
-                  View My CV <MoveUpRight className="bg-gradient" />
-                </Button>
-              </Link>
+              <CustomButtom href="https://docs.google.com/document/d/1DTUXwF6JRvYw9OGvR5uABG13e2bv1hGw/edit?usp=drive_link&ouid=106354110286437861818&rtpof=true&sd=true">
+                View My CV
+              </CustomButtom>
             </div>
           </div>
         </div>

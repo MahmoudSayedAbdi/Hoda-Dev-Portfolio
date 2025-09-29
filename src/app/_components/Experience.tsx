@@ -1,3 +1,4 @@
+import CustomButtom from "@/components/common/NavigetButtom";
 import { Button } from "@/components/ui/button";
 import { MoveUpRight } from "lucide-react";
 import Link from "next/link";
@@ -37,18 +38,10 @@ export default function Experience() {
           to contribute to dynamic teams and continuously grow in a professional environment.
         </p>
 
-        {/* daw */}
-        <Link
-          href={"https://drive.google.com/uc?export=download&id=1DTUXwF6JRvYw9OGvR5uABG13e2bv1hGw"}
-          target="_blank"
-        >
-          <Button
-            variant={"outline"}
-            className="text-xl bg-black dark:bg-white text-white dark:text-black py-5 px-10 mt-3 rounded-none flex gap-2"
-          >
-            download my cv <MoveUpRight className="bg-gradient" />
-          </Button>
-        </Link>
+        {/* download cv */}
+        <CustomButtom href="https://drive.google.com/uc?export=download&id=1DTUXwF6JRvYw9OGvR5uABG13e2bv1hGw">
+          download my cv
+        </CustomButtom>
       </div>
       <div className="col-span-1 flex flex-col">
         {experiences.map((item) => (
