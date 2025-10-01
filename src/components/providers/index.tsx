@@ -1,0 +1,23 @@
+import { AppSidebar } from "../common/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "../ui/sidebar";
+import { ThemeProvider } from "./components/theme-provider";
+
+interface ProvidersProps {
+  children: React.ReactNode;
+}
+
+export default function Providers({ children }: ProvidersProps) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <SidebarProvider>
+        <div className="flex min-h-screen w-full">
+          <AppSidebar />
+          <main className="flex-1 w-full">
+            <SidebarTrigger className="m-1" />
+            <div className="w-full mt-16  md:mt-0">{children}</div>
+          </main>
+        </div>
+      </SidebarProvider>
+    </ThemeProvider>
+  );
+}
