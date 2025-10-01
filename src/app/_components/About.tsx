@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ContactRound, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import Experience from "./Experience";
-import CustomButtom from "@/components/common/NavigetButtom";
+import CustomButtom from "@/components/common/custom-buttom";
 
 export default function About() {
   return (

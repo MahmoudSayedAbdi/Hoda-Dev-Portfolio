@@ -1,4 +1,4 @@
-import CustomButtom from "@/components/common/NavigetButtom";
+import CustomButtom from "@/components/common/custom-buttom";
 import Image from "next/image";
 import React from "react";
 import ForeverEcommerce from "../../../public/assests/forever-ecommerce.webp";

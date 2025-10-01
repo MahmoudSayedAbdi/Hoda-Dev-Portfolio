@@ -1,7 +1,4 @@
-import CustomButtom from "@/components/common/NavigetButtom";
-import { Button } from "@/components/ui/button";
-import { MoveUpRight } from "lucide-react";
-import Link from "next/link";
+import CustomButtom from "@/components/common/custom-buttom";
 import React from "react";
 
 const experiences = [

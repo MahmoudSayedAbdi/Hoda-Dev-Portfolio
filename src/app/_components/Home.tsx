@@ -1,6 +1,6 @@
 import landingImage from "../../../public/assests/landingImage.webp";
 import Image from "next/image";
-import CustomButtom from "@/components/common/NavigetButtom";
+import CustomButtom from "@/components/common/custom-buttom";
 
 /**
  * Home Component - Main landing section of the portfolio
@@ -32,7 +32,6 @@ export default function Home() {
 
           {/* Call-to-action button */}
           <CustomButtom href="https://api.whatsapp.com/send/?phone=%2B201113404148&text&type=phone_number&app_absent=0">
-            {" "}
             Let&apos;s talk with me
           </CustomButtom>
         </div>
