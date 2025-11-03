@@ -12,12 +12,12 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ModeToggle } from "./mode-toggle";
-import { motion } from "framer-motion";
 import github from "../../../public/assests/github.svg";
 import instagram from "../../../public/assests/instagram.svg";
 import linkedin from "../../../public/assests/linkedin.svg";
 import Image from "next/image";
-// Menu items.
+
+// Menu items
 const items = [
   {
     title: "Home",
@@ -58,7 +58,8 @@ const SocialNav = [
 
 export function AppSidebar() {
   const [active, setActive] = useState<string>("#home");
-  // Hook لتتبع الـ scroll وتحديد العنصر النشط
+
+  // Track scroll position and update active section
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -74,7 +75,7 @@ export function AppSidebar() {
       },
     );
 
-    // البحث عن كل الـ sections
+    // Find all sections
     const sections = items
       .map((item) => {
         const id = item.url.replace("#", "");
@@ -82,7 +83,7 @@ export function AppSidebar() {
       })
       .filter(Boolean);
 
-    // مراقبة كل الـ sections
+    // Observe all sections
     sections.forEach((section) => {
       if (section) observer.observe(section);
     });
@@ -94,7 +95,7 @@ export function AppSidebar() {
     };
   }, []);
 
-  // دالة واحدة للتعامل مع الضغط على الـ navigation
+  // Handle navigation click
   const handleNavClick = (e: React.MouseEvent, url: string) => {
     e.preventDefault();
     setActive(url);
@@ -135,7 +136,7 @@ export function AppSidebar() {
                       className={cn(
                         "relative z-10 transition-colors duration-300",
                         active === item.url
-                          ? "text-transparent bg-clip-text bg-gradient  font-semibold"
+                          ? "text-transparent bg-clip-text bg-gradient font-semibold"
                           : "",
                       )}
                     >
@@ -149,20 +150,19 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      {/*Sidebar Footer  */}
+      {/* Sidebar Footer */}
       <SidebarFooter className="flex flex-col gap-10 items-center text-center">
         <ModeToggle />
         <ul className="flex gap-2">
           {SocialNav.map((socialItem) => (
-            <motion.li
+            <li
               key={socialItem.href}
-              whileHover={{ scale: 1.1 }}
-              className="rounded-full border border-gray-700 p-2 bg-gray-100"
+              className="rounded-full border border-gray-700 p-2 bg-gray-100 transition-transform duration-200 hover:scale-110"
             >
               <Link href={socialItem.href}>
                 <Image src={socialItem.image} alt={socialItem.image} />
               </Link>
-            </motion.li>
+            </li>
           ))}
         </ul>
         <p className="text-xs md:text-sm lg:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
