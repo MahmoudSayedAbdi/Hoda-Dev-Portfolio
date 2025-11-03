@@ -1,8 +1,9 @@
 "use client";
-import { Plus } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import Skills from "./Skills";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+
 const specialties = [
   {
     id: "1",
@@ -25,35 +26,58 @@ const specialties = [
     desc: "I make websites faster, smoother, and more efficient by applying optimization techniques such as code splitting, lazy loading, caching, and image compression. I focus on improving Core Web Vitals, ensuring high Lighthouse scores, and reducing load times to keep users engaged. My goal is to create web applications that not only look good but also perform exceptionally well on all devices and networks.",
   },
 ];
+
 export default function Services() {
-  const [show, setShow] = useState("1");
+  const [openId, setOpenId] = useState<string | null>(null);
+
+  const toggleItem = (id: string) => {
+    setOpenId(openId === id ? null : id);
+  };
+
   return (
-    <div id="services" className="flex flex-col ">
+    <div id="services" className="flex flex-col">
       {/* services */}
-      <div className="p-5 ">
+      <div className="p-5 px-10">
         <div className="flex flex-col gap-4 mb-8">
-          <p className="text-lg font-semibold"> specialties</p>
-          <p className="text-5xl font-bold uppercase">my specialties</p>
+          <p className="text-lg font-semibold">Specialties</p>
+          <p className="text-5xl font-bold uppercase">My specialties</p>
         </div>
 
         {/* content */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
           {specialties.map((item) => (
-            <div key={item.title} className="border-b">
-              <div className="flex flex-col ">
-                <li className="flex  justify-between">
-                  <h4 className="font-bold text-3xl bg-gradient text-transparent bg-clip-text">
-                    . {item.title}
+            <div key={item.id} className="border-b border-gray-300 pb-3">
+              <div className="flex flex-col">
+                <div className="flex justify-between items-center">
+                  <h4 className="font-bold text-2xl md:text-3xl bg-gradient text-transparent bg-clip-text">
+                    {item.title}
                   </h4>
                   <Button
-                    onClick={() => {
-                      setShow(item.id);
-                    }}
+                    onClick={() => toggleItem(item.id)}
+                    variant="ghost"
+                    size="icon"
+                    className="hover:bg-gray-100 transition-colors duration-200"
                   >
-                    <Plus />
+                    <div className={`transition-transform duration-300 ${openId === item.id ? 'rotate-45' : 'rotate-0'}`}>
+                      <Plus className="w-6 h-6" />
+                    </div>
                   </Button>
-                </li>
-                {show === item.id ? <p className="transition-all">{item.desc}</p> : null}
+                </div>
+
+                {/* Animated Content */}
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${
+                    openId === item.id
+                      ? "grid-rows-[1fr] opacity-100 mt-4"
+                      : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="text-gray-600 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
